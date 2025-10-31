@@ -64,6 +64,11 @@ app.get('/caballeros', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+  });
+
+// 🌐 Ruta raíz para verificar estado del servidor
+app.get('/', (req, res) => {
+  res.send('🚀 Servidor Caballeros del Zodiaco activo y conectado a MongoDB Atlas');
 });
 
 // 🚀 Iniciar servidor
