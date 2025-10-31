@@ -71,6 +71,5 @@ app.get('/', (req, res) => {
   res.send('🚀 Servidor Caballeros del Zodiaco activo y conectado a MongoDB Atlas');
 });
 
-// 🚀 Iniciar servidor
-const PORT = 4000;
-app.listen(PORT, () => console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`));
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log(`🚀 Servidor corriendo en el puerto ${PORT}`));
