@@ -188,17 +188,19 @@ const hunterMongoSchema = new mongoose.Schema({
 const HunterMongo = mongoose.model('Hunter', hunterMongoSchema, 'personajes');
 
 // SQL Configuration
-const sequelize = new Sequelize('hunterdb', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql',
-  logging: console.log,  // Habilitar logging detallado
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
+const sequelize = new Sequelize(
+  "bwyv890eodahdqfddm0m", // Database
+  "uemsvhk1wsxt9jo8",     // User
+  "VA7R7z7fpBcSWwyHDuTY", // Password
+  {
+    host: "bwyv890eodahdqfddm0m-mysql.services.clever-cloud.com",
+    port: 3306,
+    dialect: "mysql",
+    logging: false,
   }
-});
+);
+
+export default sequelize;
 
 // Test de conexión MySQL
 sequelize.authenticate()
